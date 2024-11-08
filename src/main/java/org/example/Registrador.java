@@ -8,11 +8,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class Logger implements Observer<Map<String,String>> {
+public class Registrador implements Observer<Map<String,String>> {
 
     private final String FILE_PATH = "historial.txt";
 
-    public Logger(ClassroomNotifier classroomNotifier) {
+    public Registrador(ClassroomNotifier classroomNotifier) {
         classroomNotifier.getAdministradorMaterias().addObserver(this);
     }
 
