@@ -3,7 +3,7 @@ package org.historialaulas;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Logger {
+public class Logger{
 
     private final String FILE_PATH = "historial.txt";
 
