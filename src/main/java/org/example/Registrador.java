@@ -16,9 +16,9 @@ public class Registrador implements Observer<Map<String,String>> {
         classroomNotifier.getAdministradorMaterias().addObserver(this);
     }
 
-    private void writeToFile(String text) {
+    private void guardarEnHistorial(String registro) {
         try (FileWriter writer = new FileWriter(FILE_PATH, true)) { // 'true' enables append mode
-            writer.write(text + System.lineSeparator()); // Adds a newline after each message
+            writer.write(registro + System.lineSeparator()); // Adds a newline after each message
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
         }
@@ -29,7 +29,7 @@ public class Registrador implements Observer<Map<String,String>> {
 
         arg.forEach((materia, aula) -> {
             String mensaje = String.format("Aula: %s , materia: %s", aula, materia);
-            writeToFile(mensaje);
+            guardarEnHistorial(mensaje);
             System.out.println(mensaje);
         });
     }
