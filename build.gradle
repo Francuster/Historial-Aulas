@@ -19,7 +19,7 @@ allprojects {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation("com.github.gcajal:ClassRoom-Notifier:d78252f25a")
+    implementation("com.github.gcajal:ClassRoom-Notifier:7ab616ab99")
 
 }
 /*
