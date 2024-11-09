@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'org.example'
@@ -18,8 +19,16 @@ allprojects {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation("com.github.gcajal:ClassRoom-Notifier:main-SNAPSHOT")
+    implementation("com.github.gcajal:ClassRoom-Notifier:d78252f25a")
 
+}
+/*
+task runAll {
+    dependsOn ':Historial-Aulas:run', ':ClassroomNotifierUI:run'
+}
+*/
+application {
+    mainClass = 'org.example.Main' // Reemplaza con tu clase principal
 }
 
 test {

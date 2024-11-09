@@ -15,6 +15,9 @@ public class Registrador implements Observer<Map<String,String>> {
     public Registrador(ClassroomNotifier classroomNotifier) {
         classroomNotifier.getAdministradorMaterias().addObserver(this);
     }
+    public Registrador() {
+        //classroomNotifier.getAdministradorMaterias().addObserver(this);
+    }
 
     private void guardarEnHistorial(String registro) {
         try (FileWriter writer = new FileWriter(FILE_PATH, true)) { // 'true' enables append mode
