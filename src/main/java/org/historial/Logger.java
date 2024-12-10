@@ -1,8 +1,12 @@
 package org.historial;
 
 
-//TODO: implement Observer from core project
-public class Logger {
+import classroom.notifier.entity.Observable;
+import classroom.notifier.implement.Observer;
+
+import java.util.Date;
+
+public class Logger  implements Observer {
 
     private Writer writer;
 
@@ -11,20 +15,18 @@ public class Logger {
     }
 
 
-    //TODO: format line here before writing
-    public void log(String line){
-        writer.write(line);
+    public void log(String line) {
+        String formatedMessage = String.format("%s. Fecha: %s", line, new Date().toString());
+        System.out.println(formatedMessage);
+        writer.write(formatedMessage);
+
     }
 
+    @Override
+    public void update(Object data) {
+        log((String) data);
+    }
 
-    //TODO: implement obversable method update
-//    @Override
-//    public void update(Observable<Map<String, String>> observable, Map<String, String> arg) {
-//
-//        arg.forEach((materia, aula) -> {
-//            String mensaje = String.format("Aula: %s , materia: %s", aula, materia);
-//            guardarEnHistorial(mensaje);
-//            System.out.println(mensaje);
-//        });
-//    }
 }
+
+

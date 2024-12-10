@@ -1,19 +1,16 @@
 import org.historial.Logger;
 import org.historial.LoggerFactory;
-import org.historial.Writer;
+import org.junit.jupiter.api.Test;
 
-public class Main {
+public class LoggerFactoryTest {
 
     private static String FILE_PATH = "historial.txt";
-
-
-    public static void main(String args[]){
-
-
+    
+    @Test
+    public void init(){
         LoggerFactory loggerFactory = new LoggerFactory();
 
         Logger logger = loggerFactory.createLogger(FILE_PATH);
         logger.log("hello world");
-
     }
 }
